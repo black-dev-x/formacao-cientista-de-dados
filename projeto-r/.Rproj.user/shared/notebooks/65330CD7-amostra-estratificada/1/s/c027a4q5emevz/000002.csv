@@ -1,0 +1,27 @@
+"0","install.packages(""sampling"")
+"
+"2","WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+"
+"2","Installing package into ‘C:/Users/Thiago/Documents/R/win-library/3.6’
+(as ‘lib’ is unspecified)
+"
+"2","tentando a URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/sampling_2.8.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 904893 bytes (883 KB)
+"
+"2","downloaded 883 KB
+
+"
+"1","package â€˜samplingâ€™ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1",""
+"1","The downloaded binary packages are in
+	C:\Users\Thiago\AppData\Local\Temp\RtmpMznfJ6\downloaded_packages"
+"1",""
+"1","
+"

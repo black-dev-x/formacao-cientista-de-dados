@@ -1,0 +1,21 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+No conjunto de dados iris, temos três tipos de especies
+```{r}
+summary(iris)
+```
+
+Supondo que eu quero uma amostra, com 25 elementos de cada espécie, mas feitos de forma aleatória
+primeiro precisamos instalar o pacote sampling
+```{r}
+install.packages("sampling")
+```
+Então para carregar o pacote
+```{r}
+library(sampling)
+amostrairis2 = strata(iris, c("Species"), size=c(25,25,25), method="srswor")
+summary((amostrairis2))
+```
