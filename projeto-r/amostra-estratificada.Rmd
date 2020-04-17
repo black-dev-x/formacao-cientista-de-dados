@@ -19,3 +19,56 @@ library(sampling)
 amostrairis2 = strata(iris, c("Species"), size=c(25,25,25), method="srswor")
 summary((amostrairis2))
 ```
+```{r}
+summary(infert)
+```
+Agora, supondo que queiramos a amostra, com base no total da população
+
+Todos os elementos dessa forma tem a mesma chance de ser incluidos na amostra, só que de maneira estratificada
+
+aparentemente srswor é sem reposição
+```{r}
+library(sampling)
+amostra = strata(infert, c("education"), size=c(round(12*100/248), round(120*100/248), round(116*100/248)), method="srswor")
+summary(amostra)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

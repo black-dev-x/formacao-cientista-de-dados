@@ -1752,65 +1752,143 @@ summary {
 <p>No conjunto de dados iris, temos três tipos de especies</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShpcmlzKVxuYGBgIn0= -->
-<pre class="r"><code>summary(iris)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBTZXBhbC5MZW5ndGggICAgU2VwYWwuV2lkdGggICAgIFBldGFsLkxlbmd0aCAgICBQZXRhbC5XaWR0aCAgICAgICAgICBTcGVjaWVzICBcbiBNaW4uICAgOjQuMzAwICAgTWluLiAgIDoyLjAwMCAgIE1pbi4gICA6MS4wMDAgICBNaW4uICAgOjAuMTAwICAgc2V0b3NhICAgIDo1MCAgXG4gMXN0IFF1Ljo1LjEwMCAgIDFzdCBRdS46Mi44MDAgICAxc3QgUXUuOjEuNjAwICAgMXN0IFF1LjowLjMwMCAgIHZlcnNpY29sb3I6NTAgIFxuIE1lZGlhbiA6NS44MDAgICBNZWRpYW4gOjMuMDAwICAgTWVkaWFuIDo0LjM1MCAgIE1lZGlhbiA6MS4zMDAgICB2aXJnaW5pY2EgOjUwICBcbiBNZWFuICAgOjUuODQzICAgTWVhbiAgIDozLjA1NyAgIE1lYW4gICA6My43NTggICBNZWFuICAgOjEuMTk5ICAgICAgICAgICAgICAgICAgXG4gM3JkIFF1Ljo2LjQwMCAgIDNyZCBRdS46My4zMDAgICAzcmQgUXUuOjUuMTAwICAgM3JkIFF1LjoxLjgwMCAgICAgICAgICAgICAgICAgIFxuIE1heC4gICA6Ny45MDAgICBNYXguICAgOjQuNDAwICAgTWF4LiAgIDo2LjkwMCAgIE1heC4gICA6Mi41MDAgICAgICAgICAgICAgICAgICBcbiJ9 -->
-<pre><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species  
- Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100   setosa    :50  
- 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300   versicolor:50  
- Median :5.800   Median :3.000   Median :4.350   Median :1.300   virginica :50  
- Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199                  
- 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800                  
- Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500                  </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Supondo que eu quero uma amostra, com 25 elementos de cada espécie, mas feitos de forma aleatória primeiro precisamos instalar o pacote sampling</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInNhbXBsaW5nXCIpXG5cbmBgYCJ9 -->
-<pre class="r"><code>install.packages(&quot;sampling&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc3VtbWFyeShpcmlzKVxuYGBgXG5gYGAifQ== -->
+<pre class="r"><code>```r
+summary(iris)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiICBTZXBhbC5MZW5ndGggICAgU2VwYWwuV2lkdGggICAgIFBldGFsLkxlbmd0aCAgICBQZXRhbC5XaWR0aCAgICAgICAgICBTcGVjaWVzICBcbiBNaW4uICAgOjQuMzAwICAgTWluLiAgIDoyLjAwMCAgIE1pbi4gICA6MS4wMDAgICBNaW4uICAgOjAuMTAwICAgc2V0b3NhICAgIDo1MCAgXG4gMXN0IFF1Ljo1LjEwMCAgIDFzdCBRdS46Mi44MDAgICAxc3QgUXUuOjEuNjAwICAgMXN0IFF1LjowLjMwMCAgIHZlcnNpY29sb3I6NTAgIFxuIE1lZGlhbiA6NS44MDAgICBNZWRpYW4gOjMuMDAwICAgTWVkaWFuIDo0LjM1MCAgIE1lZGlhbiA6MS4zMDAgICB2aXJnaW5pY2EgOjUwICBcbiBNZWFuICAgOjUuODQzICAgTWVhbiAgIDozLjA1NyAgIE1lYW4gICA6My43NTggICBNZWFuICAgOjEuMTk5ICAgICAgICAgICAgICAgICAgXG4gM3JkIFF1Ljo2LjQwMCAgIDNyZCBRdS46My4zMDAgICAzcmQgUXUuOjUuMTAwICAgM3JkIFF1LjoxLjgwMCAgICAgICAgICAgICAgICAgIFxuIE1heC4gICA6Ny45MDAgICBNYXguICAgOjQuNDAwICAgTWF4LiAgIDo2LjkwMCAgIE1heC4gICA6Mi41MDAgICAgICAgICAgICAgICAgICBcbiJ9 --&gt;
 </code></pre>
+<p>Sepal.Length Sepal.Width Petal.Length Petal.Width Species<br />
+Min. :4.300 Min. :2.000 Min. :1.000 Min. :0.100 setosa :50<br />
+1st Qu.:5.100 1st Qu.:2.800 1st Qu.:1.600 1st Qu.:0.300 versicolor:50<br />
+Median :5.800 Median :3.000 Median :4.350 Median :1.300 virginica :50<br />
+Mean :5.843 Mean :3.057 Mean :3.758 Mean :1.199<br />
+3rd Qu.:6.400 3rd Qu.:3.300 3rd Qu.:5.100 3rd Qu.:1.800<br />
+Max. :7.900 Max. :4.400 Max. :6.900 Max. :2.500</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+Supondo que eu quero uma amostra, com 25 elementos de cada espécie, mas feitos de forma aleatória
+primeiro precisamos instalar o pacote sampling
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcXHNhbXBsaW5nXFwpXG5cbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+install.packages(\sampling\)
+</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogUnRvb2xzIGlzIHJlcXVpcmVkIHRvIGJ1aWxkIFIgcGFja2FnZXMgYnV0IGlzIG5vdCBjdXJyZW50bHkgaW5zdGFsbGVkLiBQbGVhc2UgZG93bmxvYWQgYW5kIGluc3RhbGwgdGhlIGFwcHJvcHJpYXRlIHZlcnNpb24gb2YgUnRvb2xzIGJlZm9yZSBwcm9jZWVkaW5nOlxuXG5odHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvUnRvb2xzL1xuSW5zdGFsbGluZyBwYWNrYWdlIGludG8gw6PCpMK8w6PCuMKxQzovVXNlcnMvVGhpYWdvL0RvY3VtZW50cy9SL3dpbi1saWJyYXJ5LzMuNsOjwqTCvMOjwrjCslxuKGFzIMOjwqTCvMOjwrjCsWxpYsOjwqTCvMOjwrjCsiBpcyB1bnNwZWNpZmllZClcbnRlbnRhbmRvIGEgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi8zLjYvc2FtcGxpbmdfMi44LnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggOTA0ODkzIGJ5dGVzICg4ODMgS0IpXG5kb3dubG9hZGVkIDg4MyBLQlxucGFja2FnZSDDouKCrMucc2FtcGxpbmfDouKCrOKEoiBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcblxuVGhlIGRvd25sb2FkZWQgYmluYXJ5IHBhY2thZ2VzIGFyZSBpblxuXHRDOlxcVXNlcnNcXFRoaWFnb1xcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXFJ0bXBNem5mSjZcXGRvd25sb2FkZWRfcGFja2FnZXNcbiJ9 --&gt;
+</code></pre>
+<p>WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:</p>
+<p><a href="https://cran.rstudio.com/bin/windows/Rtools/" class="uri">https://cran.rstudio.com/bin/windows/Rtools/</a> Installing package into ã¤¼ã¸±C:/Users/Thiago/Documents/R/win-library/3.6ã¤¼ã¸² (as ã¤¼ã¸±libã¤¼ã¸² is unspecified) tentando a URL ‘<a href="https://cran.rstudio.com/bin/windows/contrib/3.6/sampling_2.8.zip" class="uri">https://cran.rstudio.com/bin/windows/contrib/3.6/sampling_2.8.zip</a>’ Content type ‘application/zip’ length 904893 bytes (883 KB) downloaded 883 KB package â€˜samplingâ€™ successfully unpacked and MD5 sums checked</p>
+<p>The downloaded binary packages are in C:6_packages</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+Então para carregar o pacote
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubGlicmFyeShzYW1wbGluZylcbmFtb3N0cmFpcmlzMiA9IHN0cmF0YShpcmlzLCBjKFxcU3BlY2llc1xcKSwgc2l6ZT1jKDI1LDI1LDI1KSwgbWV0aG9kPVxcc3Jzd29yXFwpXG5zdW1tYXJ5KChhbW9zdHJhaXJpczIpKVxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+library(sampling)
+amostrairis2 = strata(iris, c(\Species\), size=c(25,25,25), method=\srswor\)
+summary((amostrairis2))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiICAgICAgIFNwZWNpZXMgICAgICBJRF91bml0ICAgICAgICAgICAgUHJvYiAgICAgICAgU3RyYXR1bSBcbiBzZXRvc2EgICAgOjI1ICAgTWluLiAgIDogIDEuMDAgICBNaW4uICAgOjAuNSAgIE1pbi4gICA6MSAgXG4gdmVyc2ljb2xvcjoyNSAgIDFzdCBRdS46IDM2LjAwICAgMXN0IFF1LjowLjUgICAxc3QgUXUuOjEgIFxuIHZpcmdpbmljYSA6MjUgICBNZWRpYW4gOiA3NC4wMCAgIE1lZGlhbiA6MC41ICAgTWVkaWFuIDoyICBcbiAgICAgICAgICAgICAgICAgTWVhbiAgIDogNzMuNzUgICBNZWFuICAgOjAuNSAgIE1lYW4gICA6MiAgXG4gICAgICAgICAgICAgICAgIDNyZCBRdS46MTExLjUwICAgM3JkIFF1LjowLjUgICAzcmQgUXUuOjMgIFxuICAgICAgICAgICAgICAgICBNYXguICAgOjE0OC4wMCAgIE1heC4gICA6MC41ICAgTWF4LiAgIDozICBcbiJ9 --&gt;
+</code></pre>
+<pre><code>   Species      ID_unit            Prob        Stratum </code></pre>
+<p>setosa :25 Min. : 1.00 Min. :0.5 Min. :1<br />
+versicolor:25 1st Qu.: 36.00 1st Qu.:0.5 1st Qu.:1<br />
+virginica :25 Median : 74.00 Median :0.5 Median :2<br />
+Mean : 73.75 Mean :0.5 Mean :2<br />
+3rd Qu.:111.50 3rd Qu.:0.5 3rd Qu.:3<br />
+Max. :148.00 Max. :0.5 Max. :3</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShpbmZlcnQpXG5gYGAifQ== --&gt;
+
+```r
+summary(infert)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogUnRvb2xzIGlzIHJlcXVpcmVkIHRvIGJ1aWxkIFIgcGFja2FnZXMgYnV0IGlzIG5vdCBjdXJyZW50bHkgaW5zdGFsbGVkLiBQbGVhc2UgZG93bmxvYWQgYW5kIGluc3RhbGwgdGhlIGFwcHJvcHJpYXRlIHZlcnNpb24gb2YgUnRvb2xzIGJlZm9yZSBwcm9jZWVkaW5nOlxuXG5odHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvUnRvb2xzL1xuSW5zdGFsbGluZyBwYWNrYWdlIGludG8g46S847ixQzovVXNlcnMvVGhpYWdvL0RvY3VtZW50cy9SL3dpbi1saWJyYXJ5LzMuNuOkvOO4slxuKGFzIOOkvOO4sWxpYuOkvOO4siBpcyB1bnNwZWNpZmllZClcbnRlbnRhbmRvIGEgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi8zLjYvc2FtcGxpbmdfMi44LnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggOTA0ODkzIGJ5dGVzICg4ODMgS0IpXG5kb3dubG9hZGVkIDg4MyBLQlxuIn0= -->
-<pre><code>WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
-
-https://cran.rstudio.com/bin/windows/Rtools/
-Installing package into 㤼㸱C:/Users/Thiago/Documents/R/win-library/3.6㤼㸲
-(as 㤼㸱lib㤼㸲 is unspecified)
-tentando a URL &#39;https://cran.rstudio.com/bin/windows/contrib/3.6/sampling_2.8.zip&#39;
-Content type &#39;application/zip&#39; length 904893 bytes (883 KB)
-downloaded 883 KB</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJhzYW1wbGluZ+KAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcblxuVGhlIGRvd25sb2FkZWQgYmluYXJ5IHBhY2thZ2VzIGFyZSBpblxuXHRDOlxcVXNlcnNcXFRoaWFnb1xcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXFJ0bXBNem5mSjZcXGRvd25sb2FkZWRfcGFja2FnZXNcbiJ9 -->
-<pre><code>package ‘sampling’ successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\Thiago\AppData\Local\Temp\RtmpMznfJ6\downloaded_packages</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICAgZWR1Y2F0aW9uICAgICAgICBhZ2UgICAgICAgICAgICBwYXJpdHkgICAgICAgICBpbmR1Y2VkICAgICAgICAgICAgY2FzZSAgICAgICAgIHNwb250YW5lb3VzICAgICAgICBzdHJhdHVtICAgICAgcG9vbGVkLnN0cmF0dW0gXG4gMC01eXJzIDogMTIgICBNaW4uICAgOjIxLjAwICAgTWluLiAgIDoxLjAwMCAgIE1pbi4gICA6MC4wMDAwICAgTWluLiAgIDowLjAwMDAgICBNaW4uICAgOjAuMDAwMCAgIE1pbi4gICA6IDEuMDAgICBNaW4uICAgOiAxLjAwICBcbiA2LTExeXJzOjEyMCAgIDFzdCBRdS46MjguMDAgICAxc3QgUXUuOjEuMDAwICAgMXN0IFF1LjowLjAwMDAgICAxc3QgUXUuOjAuMDAwMCAgIDFzdCBRdS46MC4wMDAwICAgMXN0IFF1LjoyMS4wMCAgIDFzdCBRdS46MTkuMDAgIFxuIDEyKyB5cnM6MTE2ICAgTWVkaWFuIDozMS4wMCAgIE1lZGlhbiA6Mi4wMDAgICBNZWRpYW4gOjAuMDAwMCAgIE1lZGlhbiA6MC4wMDAwICAgTWVkaWFuIDowLjAwMDAgICBNZWRpYW4gOjQyLjAwICAgTWVkaWFuIDozNi4wMCAgXG4gICAgICAgICAgICAgICBNZWFuICAgOjMxLjUwICAgTWVhbiAgIDoyLjA5MyAgIE1lYW4gICA6MC41NzI2ICAgTWVhbiAgIDowLjMzNDcgICBNZWFuICAgOjAuNTc2NiAgIE1lYW4gICA6NDEuODcgICBNZWFuICAgOjMzLjU4ICBcbiAgICAgICAgICAgICAgIDNyZCBRdS46MzUuMjUgICAzcmQgUXUuOjMuMDAwICAgM3JkIFF1LjoxLjAwMDAgICAzcmQgUXUuOjEuMDAwMCAgIDNyZCBRdS46MS4wMDAwICAgM3JkIFF1Ljo2Mi4yNSAgIDNyZCBRdS46NDguMjUgIFxuICAgICAgICAgICAgICAgTWF4LiAgIDo0NC4wMCAgIE1heC4gICA6Ni4wMDAgICBNYXguICAgOjIuMDAwMCAgIE1heC4gICA6MS4wMDAwICAgTWF4LiAgIDoyLjAwMDAgICBNYXguICAgOjgzLjAwICAgTWF4LiAgIDo2My4wMCAgXG4ifQ== -->
+<pre><code>   education        age            parity         induced            case         spontaneous        stratum      pooled.stratum 
+ 0-5yrs : 12   Min.   :21.00   Min.   :1.000   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   : 1.00   Min.   : 1.00  
+ 6-11yrs:120   1st Qu.:28.00   1st Qu.:1.000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:21.00   1st Qu.:19.00  
+ 12+ yrs:116   Median :31.00   Median :2.000   Median :0.0000   Median :0.0000   Median :0.0000   Median :42.00   Median :36.00  
+               Mean   :31.50   Mean   :2.093   Mean   :0.5726   Mean   :0.3347   Mean   :0.5766   Mean   :41.87   Mean   :33.58  
+               3rd Qu.:35.25   3rd Qu.:3.000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:62.25   3rd Qu.:48.25  
+               Max.   :44.00   Max.   :6.000   Max.   :2.0000   Max.   :1.0000   Max.   :2.0000   Max.   :83.00   Max.   :63.00  </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Então para carregar o pacote</p>
+<p>Agora, supondo que queiramos a amostra, com base no total da população</p>
+<p>Todos os elementos dessa forma tem a mesma chance de ser incluidos na amostra, só que de maneira estratificada</p>
+<p>aparentemente srswor é sem reposição</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzYW1wbGluZylcbmFtb3N0cmFpcmlzMiA9IHN0cmF0YShpcmlzLCBjKFwiU3BlY2llc1wiKSwgc2l6ZT1jKDI1LDI1LDI1KSwgbWV0aG9kPVwic3Jzd29yXCIpXG5zdW1tYXJ5KChhbW9zdHJhaXJpczIpKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzYW1wbGluZylcbmFtb3N0cmEgPSBzdHJhdGEoaW5mZXJ0LCBjKFwiZWR1Y2F0aW9uXCIpLCBzaXplPWMocm91bmQoMTIqMTAwLzI0OCksIHJvdW5kKDEyMCoxMDAvMjQ4KSwgcm91bmQoMTE2KjEwMC8yNDgpKSwgbWV0aG9kPVwic3Jzd29yXCIpXG5zdW1tYXJ5KGFtb3N0cmEpXG5gYGAifQ== -->
 <pre class="r"><code>library(sampling)
-amostrairis2 = strata(iris, c(&quot;Species&quot;), size=c(25,25,25), method=&quot;srswor&quot;)
-summary((amostrairis2))</code></pre>
+amostra = strata(infert, c(&quot;education&quot;), size=c(round(12*100/248), round(120*100/248), round(116*100/248)), method=&quot;srswor&quot;)
+summary(amostra)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgIFNwZWNpZXMgICAgICBJRF91bml0ICAgICAgICAgICAgUHJvYiAgICAgICAgU3RyYXR1bSBcbiBzZXRvc2EgICAgOjI1ICAgTWluLiAgIDogIDEuMDAgICBNaW4uICAgOjAuNSAgIE1pbi4gICA6MSAgXG4gdmVyc2ljb2xvcjoyNSAgIDFzdCBRdS46IDM2LjAwICAgMXN0IFF1LjowLjUgICAxc3QgUXUuOjEgIFxuIHZpcmdpbmljYSA6MjUgICBNZWRpYW4gOiA3NC4wMCAgIE1lZGlhbiA6MC41ICAgTWVkaWFuIDoyICBcbiAgICAgICAgICAgICAgICAgTWVhbiAgIDogNzMuNzUgICBNZWFuICAgOjAuNSAgIE1lYW4gICA6MiAgXG4gICAgICAgICAgICAgICAgIDNyZCBRdS46MTExLjUwICAgM3JkIFF1LjowLjUgICAzcmQgUXUuOjMgIFxuICAgICAgICAgICAgICAgICBNYXguICAgOjE0OC4wMCAgIE1heC4gICA6MC41ICAgTWF4LiAgIDozICBcbiJ9 -->
-<pre><code>       Species      ID_unit            Prob        Stratum 
- setosa    :25   Min.   :  1.00   Min.   :0.5   Min.   :1  
- versicolor:25   1st Qu.: 36.00   1st Qu.:0.5   1st Qu.:1  
- virginica :25   Median : 74.00   Median :0.5   Median :2  
-                 Mean   : 73.75   Mean   :0.5   Mean   :2  
-                 3rd Qu.:111.50   3rd Qu.:0.5   3rd Qu.:3  
-                 Max.   :148.00   Max.   :0.5   Max.   :3  </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICAgZWR1Y2F0aW9uICAgICBJRF91bml0ICAgICAgICAgICAgUHJvYiAgICAgICAgICAgU3RyYXR1bSAgICBcbiAwLTV5cnMgOiA1ICAgTWluLiAgIDogIDMuMDAgICBNaW4uICAgOjAuNDAwMCAgIE1pbi4gICA6MS4wMCAgXG4gNi0xMXlyczo0OCAgIDFzdCBRdS46IDU2Ljc1ICAgMXN0IFF1LjowLjQwMDAgICAxc3QgUXUuOjIuMDAgIFxuIDEyKyB5cnM6NDcgICBNZWRpYW4gOjEzMS4wMCAgIE1lZGlhbiA6MC40MDUyICAgTWVkaWFuIDoyLjAwICBcbiAgICAgICAgICAgICAgTWVhbiAgIDoxMjUuMTAgICBNZWFuICAgOjAuNDAzMyAgIE1lYW4gICA6Mi40MiAgXG4gICAgICAgICAgICAgIDNyZCBRdS46MTg1LjI1ICAgM3JkIFF1LjowLjQwNTIgICAzcmQgUXUuOjMuMDAgIFxuICAgICAgICAgICAgICBNYXguICAgOjI0OC4wMCAgIE1heC4gICA6MC40MTY3ICAgTWF4LiAgIDozLjAwICBcbiJ9 -->
+<pre><code>   education     ID_unit            Prob           Stratum    
+ 0-5yrs : 5   Min.   :  3.00   Min.   :0.4000   Min.   :1.00  
+ 6-11yrs:48   1st Qu.: 56.75   1st Qu.:0.4000   1st Qu.:2.00  
+ 12+ yrs:47   Median :131.00   Median :0.4052   Median :2.00  
+              Mean   :125.10   Mean   :0.4033   Mean   :2.42  
+              3rd Qu.:185.25   3rd Qu.:0.4052   3rd Qu.:3.00  
+              Max.   :248.00   Max.   :0.4167   Max.   :3.00  </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpObyBjb25qdW50byBkZSBkYWRvcyBpcmlzLCB0ZW1vcyB0csOqcyB0aXBvcyBkZSBlc3BlY2llcw0KYGBge3J9DQpzdW1tYXJ5KGlyaXMpDQpgYGANCg0KU3Vwb25kbyBxdWUgZXUgcXVlcm8gdW1hIGFtb3N0cmEsIGNvbSAyNSBlbGVtZW50b3MgZGUgY2FkYSBlc3DDqWNpZSwgbWFzIGZlaXRvcyBkZSBmb3JtYSBhbGVhdMOzcmlhDQpwcmltZWlybyBwcmVjaXNhbW9zIGluc3RhbGFyIG8gcGFjb3RlIHNhbXBsaW5nDQpgYGB7cn0NCmluc3RhbGwucGFja2FnZXMoInNhbXBsaW5nIikNCmBgYA0KRW50w6NvIHBhcmEgY2FycmVnYXIgbyBwYWNvdGUNCmBgYHtyfQ0KbGlicmFyeShzYW1wbGluZykNCmFtb3N0cmFpcmlzMiA9IHN0cmF0YShpcmlzLCBjKCJTcGVjaWVzIiksIHNpemU9YygyNSwyNSwyNSksIG1ldGhvZD0ic3Jzd29yIikNCnN1bW1hcnkoKGFtb3N0cmFpcmlzMikpDQpgYGANCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpObyBjb25qdW50byBkZSBkYWRvcyBpcmlzLCB0ZW1vcyB0csOqcyB0aXBvcyBkZSBlc3BlY2llcw0KYGBge3J9DQpzdW1tYXJ5KGlyaXMpDQpgYGANCg0KU3Vwb25kbyBxdWUgZXUgcXVlcm8gdW1hIGFtb3N0cmEsIGNvbSAyNSBlbGVtZW50b3MgZGUgY2FkYSBlc3DDqWNpZSwgbWFzIGZlaXRvcyBkZSBmb3JtYSBhbGVhdMOzcmlhDQpwcmltZWlybyBwcmVjaXNhbW9zIGluc3RhbGFyIG8gcGFjb3RlIHNhbXBsaW5nDQpgYGB7cn0NCmluc3RhbGwucGFja2FnZXMoInNhbXBsaW5nIikNCmBgYA0KRW50w6NvIHBhcmEgY2FycmVnYXIgbyBwYWNvdGUNCmBgYHtyfQ0KbGlicmFyeShzYW1wbGluZykNCmFtb3N0cmFpcmlzMiA9IHN0cmF0YShpcmlzLCBjKCJTcGVjaWVzIiksIHNpemU9YygyNSwyNSwyNSksIG1ldGhvZD0ic3Jzd29yIikNCnN1bW1hcnkoKGFtb3N0cmFpcmlzMikpDQpgYGANCmBgYHtyfQ0Kc3VtbWFyeShpbmZlcnQpDQpgYGANCkFnb3JhLCBzdXBvbmRvIHF1ZSBxdWVpcmFtb3MgYSBhbW9zdHJhLCBjb20gYmFzZSBubyB0b3RhbCBkYSBwb3B1bGHDp8Ojbw0KDQpUb2RvcyBvcyBlbGVtZW50b3MgZGVzc2EgZm9ybWEgdGVtIGEgbWVzbWEgY2hhbmNlIGRlIHNlciBpbmNsdWlkb3MgbmEgYW1vc3RyYSwgc8OzIHF1ZSBkZSBtYW5laXJhIGVzdHJhdGlmaWNhZGENCg0KYXBhcmVudGVtZW50ZSBzcnN3b3Igw6kgc2VtIHJlcG9zacOnw6NvDQpgYGB7cn0NCmxpYnJhcnkoc2FtcGxpbmcpDQphbW9zdHJhID0gc3RyYXRhKGluZmVydCwgYygiZWR1Y2F0aW9uIiksIHNpemU9Yyhyb3VuZCgxMioxMDAvMjQ4KSwgcm91bmQoMTIwKjEwMC8yNDgpLCByb3VuZCgxMTYqMTAwLzI0OCkpLCBtZXRob2Q9InNyc3dvciIpDQpzdW1tYXJ5KGFtb3N0cmEpDQpgYGANCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0K</div>
 
 
 
