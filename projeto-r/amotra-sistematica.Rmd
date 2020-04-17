@@ -1,0 +1,15 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+A aleatoriedade existe mesmo apenas no primeiro sorteio, depois do primeiro sorteio os elementos são pegos em intervalos regulares
+
+```{r}
+library(TeachingSampling)
+amostra = S.SY(150, 10)
+amostra
+
+amostrairis = iris[amostra,]
+amostrairis
+```
+
